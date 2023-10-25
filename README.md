@@ -28,7 +28,7 @@
 
 ---
 
-# Party DAO audit details
+# PartyDAO audit details
 - Total Prize Pool: $60,500 USDC 
   - HM awards: $41,250 USDC 
   - Analysis awards: $2,500 USDC 
