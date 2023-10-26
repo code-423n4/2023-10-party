@@ -1,49 +1,77 @@
-# Repo setup
+# PartyDAO Audit Details
 
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
-# PartyDAO audit details
-- Total Prize Pool: $60,500 USDC 
-  - HM awards: $41,250 USDC 
-  - Analysis awards: $2,500 USDC 
-  - QA awards: $1,250 USDC 
-  - Bot Race awards: $3,750 USDC 
-  - Gas awards: $1,250 USDC 
-  - Judge awards: $6,000 USDC 
-  - Lookout awards: $4,000 USDC 
-  - Scout awards: $500 USDC 
+- Total Prize Pool: $60,500 USDC
+  - HM awards: $41,250 USDC
+  - Analysis awards: $2,500 USDC
+  - QA awards: $1,250 USDC
+  - Bot Race awards: $3,750 USDC
+  - Gas awards: $1,250 USDC
+  - Judge awards: $6,000 USDC
+  - Lookout awards: $4,000 USDC
+  - Scout awards: $500 USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-party/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts October 31, 2023 20:00 UTC 
+- Starts October 31, 2023 20:00 UTC
 - Ends November 10, 2023 20:00 UTC
-  
+
+## Overview
+
+The Party Protocol aims to be a standard for group coordination, providing on-chain functionality for essential group behaviors:
+
+1. **Formation:** Assembling a group and combining resources.
+2. **Coordination:** Making decisions and taking action together.
+3. **Distribution:** Sharing resources with group members.
+
+This next release aims to expand what Parties can do, introducing the ability for Party to sign messages via ERC1271, allowing governance settings to be changed after initialization, extending capabilities for the authority role, and more. More specific details about all changes can be found below.
+
+Before continuing, it is highly recommended that you read the following pages from the [docs](https://docs.partydao.org):
+
+- [Introduction](https://docs.partydao.org/docs/Introduction)
+- [Party: Overview](https://docs.partydao.org/docs/partys/Overview)
+- [Crowdfund: Overview](https://docs.partydao.org/docs/crowdfund/Overview)
+- [Party](https://docs.partydao.org/docs/partys/Party)
+
+## Changelog
+
+- Add functionality for Parties to sign messages via ERC1271
+- Add functionality for Parties to change governance settings
+- Add functionality to skip proposal’s veto period if all hosts have accepted it
+- Add functionality for authorities to decrease the voting power of a specific member with `PartyGovernanceNFT.decreaseVotingPower()`
+- Add functionality for authorities to decrease the total voting power of a Party with `PartyGovernanceNFT.decreaseTotalVotingPower()`
+- Update contract to ERC-1167 proxies from previous custom proxy implementation
+- Update `InitialETHCrowdfund` to allow seting additional authorities for a newly created Party.
+- Update `governanceValues` to be stored in `ProposalStorage` instead of `Party`
+- Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started
+- Update to inline modifiers to reduce contract size for `Party`
+
+## Links
+
+- **Previous Audits:** [2023-05-party](https://github.com/code-423n4/2023-05-party), [2023-04-party](https://github.com/code-423n4/2023-04-party), [2022-09-party](https://github.com/code-423n4/2022-09-party)
+- **Documentation:** [https://docs.partydao.org](https://docs.partydao.org/)
+- **Website:** https://www.party.app/
+- **Twitter:** [https://twitter.com/prtyDAO](https://twitter.com/prtyDAO?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+- **Discord:** https://discord.gg/pMPcwMDtyR
+
+## Scope
+
+[ ⭐️ SPONSORS: add scoping and technical details here ]
+
+- [ ] In the table format shown below, provide the name of each contract and:
+  - [ ] source lines of code (excluding blank lines and comments) in each _For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc)._
+  - [ ] external contracts called in each
+  - [ ] libraries used in each
+
+_List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus._
+
+| Contract                                                                                                | SLOC | Purpose                | Libraries used                                           |
+| ------------------------------------------------------------------------------------------------------- | ---- | ---------------------- | -------------------------------------------------------- |
+| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123  | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+
+## Out of Scope
+
+_List any files/contracts that are out of scope for this audit._
+
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2023-10-party/blob/main/4naly3er-report.md).
@@ -52,89 +80,82 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in the 4naly3er **or** the automated findings output is considered a publicly known issue and is ineligible for awards._
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
+All the following are known issues or risks deemed acceptable that shouldn't lead to a valid finding:
 
+- Authorities have “root user privileges” over a Party and is it well aware that they can exploit or break Parties in a wide variety of ways, especially if they are set to a malicious EOA or unsafe smart contract. This is why authorities are almost always smart contracts that are highly audited and trusted, and are NOT expected to be EOAs.
+- Hosts have unilateral veto power on any proposal. Hosts can block a governance party in this way.
+- It is possible that someone could manipulate parties by contributing ETH and then buying their NFT that they own. This is known and not considered a bug or a valid finding by the team.
+- If a party were to list a malicious NFT (eg. reverts on transfer after listing), somewhere along the way it may break the proposal flow and put the party in a stuck state until `cancelDelay` is reached. While it is annoying, we do not consider it serious because (1) the proposal can always be canceled and (2) it is unlikely a malicious NFT will have a market.
+- There are emergency admin recovery functions on Parties and crowdfunds callable by the multisig that can execute arbitrary bytecode, though party hosts can disable them.
+- Canceling an `InProgress` proposal can leave the governance party in a vulnerable or undesirable state because there is no cleanup logic run during a cancel. For example, if a party cancels a Zora proposal while the Zora auction is active, the party will no longer possess the NFT (Zora is custodial), and must either wait for the auction to conclude or execute an arbitrary call to cancel the action directly on Zora in order to retrieve it.
 
-# Overview
+In addition, any of the “Sponsor Acknowledged” issues from past audits:
 
-[ ⭐️ SPONSORS: add info here ]
+- [2023-05-party-findings](https://github.com/code-423n4/2023-05-party-findings/issues?q=label%3A%22sponsor+acknowledged%22+label%3A%222+%28Med+Risk%29%22%2C%223+%28High+Risk%29%22+)
+- [2023-04-party-findings](https://github.com/code-423n4/2023-04-party-findings/issues?q=label%3A%22sponsor+acknowledged%22+label%3A%222+%28Med+Risk%29%22%2C%223+%28High+Risk%29%22+)
+- [2022-09-party-findings](<https://github.com/code-423n4/2022-09-party-findings/issues?q=label%3A"sponsor+acknowledged"+label%3A"2+(Med+Risk)"%2C"3+(High+Risk)"+>)
 
-## Links
+## Areas of Interest
 
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
+A common theme we’ve noticed through our past C4 audits (we’ve had 4 now) is that the top findings were exploits introduced in one part of the protocol caused by a code change made in another related but often unsuspecting part of the protocol.
 
+As the focus on this release was the `Party` contract, and all the contracts it inherits, we would _highly_ recommend you at least be aware of each of these related contracts:
 
-# Scope
+- `TokenDistributor`
+- `InitialETHCrowdfund`
+- All gatekeeper contracts
+- All operator contracts
+- All proposal contracts
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
+If you want to take it a step further, you might ask yourself whether changes in one part of the codebase that effect another in turn introduce any unexpected interactions in yet another part of the codebase that interacts with the part before.
 
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
+In addition, it may we worthwhile to check all voting power accounting is correct and items owned by a Party (e.g. ERC721s, ERC20s) are not ruggable.
 
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
-
-## Out of scope
-
-*List any files/contracts that are out of scope for this audit.*
-
-# Additional Context
-
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
-
-## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
-
-## Main invariants
-*Describe the project's main invariants (properties that should NEVER EVER be broken).*
-
-## Scoping Details 
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
+## Scoping Details
 
 ```
 - If you have a public code repo, please share it here:  https://github.com/PartyDAO/party-protocol
 - How many contracts are in scope?:   8
 - Total SLoC for these contracts?:  1563
-- How many external imports are there?: 4 
+- How many external imports are there?: 4
 - How many separate interfaces and struct definitions are there for the contracts within scope?:  19
 - Does most of your code generally use composition or inheritance?:   Inheritance
 - How many external calls?:   7
 - What is the overall line coverage percentage provided by your tests?: 62
 - Is this an upgrade of an existing system?: True;
   - 1. Add EIP-1271 signing capability to parties.
-  - 2. Skip veto period for a proposal when all hosts accept. 
-  - 3) Add the ability for governance parameters to be set in a proposal.
-  - 4) Use ERC-1167 minimal proxies.
-  - 5) Expand the abilities of the authority role.
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): ERC-20 Token, Uses L2, NFT, Timelock function 
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: False  
-- Please describe required context:   
+  - 2. Skip veto period for a proposal when all hosts accept.
+  - 3. Add the ability for governance parameters to be set in a proposal.
+  - 4. Use ERC-1167 minimal proxies.
+  - 5. Expand the abilities of the authority role.
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): ERC-20 Token, Uses L2, NFT, Timelock function
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: False
+- Please describe required context:
 - Does it use an oracle?:  No
 - Describe any novel or unique curve logic or mathematical models your code uses: No novel
 - Is this either a fork of or an alternate implementation of another project?:   False
-- Does it use a side-chain?: 
+- Does it use a side-chain?:
 - Describe any specific areas you would like addressed:
 ```
 
-# Tests
+## Testing
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+### Run tests (except fork tests):
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+```bash
+forge test -vv
+# If you want gas reports:
+forge test --gas-report -vv
+```
+
+### Run forked tests
+
+```bash
+forge test --mt testFork --fork-url $YOUR_RPC_URL -vv
+```
+
+### Run all tests
+
+```bash
+forge test --fork-url $YOUR_RPC_URL -vv
+```
