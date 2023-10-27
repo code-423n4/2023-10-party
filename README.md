@@ -45,6 +45,14 @@ Before continuing, it is highly recommended that you read the following pages fr
 - Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started
 - Update to inline modifiers to reduce contract size for `Party`
 
+## Quickstart Command
+
+Here's a one-liner to immediately get started with the codebase. It will clone the project, build it, run every test, and display gas reports:
+
+```jsx
+export ETH_RPC_URL='<your_alchemy_mainnet_url_here>' && rm -Rf 2023-10-party || true && git clone https://github.com/code-423n4/2023-10-party -j8 --recurse-submodules && cd 2023-10-party && foundryup && forge install && yarn install && forge test -f $ETH_RPC_URL --gas-report
+```
+
 ## Links
 
 - **Previous Audits:** [2023-05-party](https://github.com/code-423n4/2023-05-party), [2023-04-party](https://github.com/code-423n4/2023-04-party), [2022-09-party](https://github.com/code-423n4/2022-09-party)
@@ -70,7 +78,7 @@ Before continuing, it is highly recommended that you read the following pages fr
 
 ## Out of Scope
 
-The file `contracts/crowdfund/ReraiseETHCrowdfund.sol` is out of scope. All files located in `contracts/renderers` are out of scope. All files not located within the `contracts` folder are also out of scope. 
+The file `contracts/crowdfund/ReraiseETHCrowdfund.sol` is out of scope. All files located in `contracts/renderers` are out of scope. All files not located within the `contracts` folder are also out of scope.
 
 ## Automated Findings / Publicly Known Issues
 
