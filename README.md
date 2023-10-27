@@ -43,9 +43,9 @@ Before continuing, it is highly recommended that you read the following pages fr
 | Add functionality for authorities to decrease the total voting power of a Party with `PartyGovernanceNFT.decreaseTotalVotingPower()` | Given that authorities now have the ability to burn party cards even after finalization, the total voting power must by adjustable downwards by authorities. |
 | Update contract to ERC-1167 proxies from previous custom proxy implementation | Using the `ERC-1167 proxies` allows for better integration with services such as auto-verification on etherscan |
 | Update `InitialETHCrowdfund` to allow setting additional authorities for a newly created Party. | To enable parties to immediately have the ability to interact with the `AddPartyCardsAuthority` as well as other authorities coming in the future |
-| Update `governanceValues` to be stored in `ProposalStorage` instead of `Party` | |
-| Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started | |
-| Update to inline modifiers to reduce contract size for `Party` | |
+| Update `governanceValues` to be stored in `ProposalStorage` instead of `Party` | To allow the ProposalExecutionEngine to access it  to enable Parties to modify governance settings. |
+| Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started | To expand the variety of modules and extensions that could be built upon the Party Protocol leveraging the capabilities of the authority. |
+| Update to inline modifiers to reduce contract size for `Party` | Necessary to meet the contract size limit. |
 
 ## Quickstart Command
 
