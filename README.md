@@ -66,8 +66,7 @@ _List all files in scope in the table below (along with hyperlinks) -- and feel 
 
 | Contract                                                                                                | SLOC | Purpose                | Libraries used                                           |
 | ------------------------------------------------------------------------------------------------------- | ---- | ---------------------- | -------------------------------------------------------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 300  | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
-| [contracts/crowdfund/InitialETHCrowdfund.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 300  | This contract is a crowdfund for creating a new ETH party | |
+| [contracts/crowdfund/InitialETHCrowdfund.sol](contracts/crowdfund/InitialETHCrowdfund.sol) | 300  | This contract is a crowdfund for creating a new ETH party | |
 | [contracts/party/PartyGovernance.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 778  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the governance logic for parties | |
 | [contracts/party/PartyGovernanceNFT.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 313  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the token logic for parties | [`solmate/ERC721`](https://github.com/PartyDAO/party-protocol/blob/main/contracts/vendor/solmate/ERC721.sol), [`openzeppelin/contracts/interfaces/IERC2981.sol`](https://openzeppelin.com/contracts/) |
 | [contracts/proposals/ProposalExecutionEngine.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 244  | This contract is delegate called from parties for execution logic involved with proposal. Parties also have a fallback that does a static delegate call to the `ProposalExecutionEngine` |  |
@@ -80,7 +79,7 @@ _List all files in scope in the table below (along with hyperlinks) -- and feel 
 
 ## Out of Scope
 
-The file `contracts/crowdfund/ReraiseETHCrowdfund.sol` is out of scope as well as all files not located within the `contracts` folder.
+The file `contracts/crowdfund/ReraiseETHCrowdfund.sol` is out of scope. All files located in `contracts/renderers` are out of scope. All files not located within the `contracts` folder are also out of scope. 
 
 ## Automated Findings / Publicly Known Issues
 
