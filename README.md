@@ -34,16 +34,18 @@ Before continuing, it is highly recommended that you read the following pages fr
 
 ## Changelog
 
-- Add functionality for Parties to sign messages via ERC1271
-- Add functionality for Parties to change governance settings
-- Add functionality to skip proposal’s veto period if all hosts have accepted it
-- Add functionality for authorities to decrease the voting power of a specific member with `PartyGovernanceNFT.decreaseVotingPower()`
-- Add functionality for authorities to decrease the total voting power of a Party with `PartyGovernanceNFT.decreaseTotalVotingPower()`
-- Update contract to ERC-1167 proxies from previous custom proxy implementation
-- Update `InitialETHCrowdfund` to allow setting additional authorities for a newly created Party.
-- Update `governanceValues` to be stored in `ProposalStorage` instead of `Party`
-- Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started
-- Update to inline modifiers to reduce contract size for `Party`
+| Change                                                 | Motivation                                                                                         |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| Add functionality for Parties to sign messages via ERC1271 | Parties want to use web-apps that require singing a message from the address to access them. Additionally, this change allows passing proposals to sign signatures used in on-chain actions.  |
+| Add functionality for Parties to change governance settings | Previously, governance settings were not changeable once starting the party. This created issues since parties could not adjust their settings to account for their change over time |
+| Add functionality to skip proposal’s veto period if all hosts have accepted it | Once all hosts accept a proposal, skipping the veto period allows for parties to move faster. |
+| Add functionality for authorities to decrease the voting power of a specific member with `PartyGovernanceNFT.decreaseVotingPower()` | We have ideas for new usecases for parties that would take advantage of a more fluid intrinsic voting power controlled by an external contract |
+| Add functionality for authorities to decrease the total voting power of a Party with `PartyGovernanceNFT.decreaseTotalVotingPower()` | Given that authorities now have the ability to burn party cards even after finalization, the total voting power must by adjustable downwards by authorities. |
+| Update contract to ERC-1167 proxies from previous custom proxy implementation | Using the `ERC-1167 proxies` allows for better integration with services such as auto-verification on etherscan |
+| Update `InitialETHCrowdfund` to allow setting additional authorities for a newly created Party. | To enable parties to immediately have the ability to interact with the `AddPartyCardsAuthority` as well as other authorities coming in the future |
+| Update `governanceValues` to be stored in `ProposalStorage` instead of `Party` | |
+| Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started | |
+| Update to inline modifiers to reduce contract size for `Party` | |
 
 ## Quickstart Command
 
