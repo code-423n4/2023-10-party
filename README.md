@@ -66,11 +66,21 @@ _List all files in scope in the table below (along with hyperlinks) -- and feel 
 
 | Contract                                                                                                | SLOC | Purpose                | Libraries used                                           |
 | ------------------------------------------------------------------------------------------------------- | ---- | ---------------------- | -------------------------------------------------------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123  | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 300  | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| [contracts/crowdfund/InitialETHCrowdfund.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 300  | This contract is a crowdfund for creating a new ETH party | |
+| [contracts/party/PartyGovernance.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 778  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the governance logic for parties | |
+| [contracts/party/PartyGovernanceNFT.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 313  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the token logic for parties | [`solmate/ERC721`](https://github.com/PartyDAO/party-protocol/blob/main/contracts/vendor/solmate/ERC721.sol), [`openzeppelin/contracts/interfaces/IERC2981.sol`](https://openzeppelin.com/contracts/) |
+| [contracts/proposals/ProposalExecutionEngine.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 244  | This contract is delegate called from parties for execution logic involved with proposal. Parties also have a fallback that does a static delegate call to the `ProposalExecutionEngine` |  |
+| [contracts/proposals/ProposalStorage.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 47  | Shared storage storage bucket that is accessed in multiple contracts | |
+| [contracts/proposals/SetGovernanceParameterProposal.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 55  | A new proposal type that allows setting governance parameters for the party | |
+| [contracts/proposals/SetSignatureValidatorProposal.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 40  | A new proposal type that allows setting a signature validator for a given signature hash or simple validating the hash | |
+| [contracts/signature-validators/OffChainSignatureValidator.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 60  | Validator contract that reconstructs a message and ensures its a plaintext message. It then returns valid if the signer has sufficient voting power or membership in the party | |
+| [contracts/utils/Implementation.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 32  | A contract that provides helper function for implementation contracts used from a proxy | |
+
 
 ## Out of Scope
 
-_List any files/contracts that are out of scope for this audit._
+The file `contracts/crowdfund/ReraiseETHCrowdfund.sol` is out of scope as well as all files not located within the `contracts` folder.
 
 ## Automated Findings / Publicly Known Issues
 
@@ -151,7 +161,7 @@ forge test --gas-report -vv
 ### Run forked tests
 
 ```bash
-forge test --mt testFork --fork-url $YOUR_RPC_URL -vv
+forge test --mc ForkedTest --fork-url $YOUR_RPC_URL -vv
 ```
 
 ### Run all tests
