@@ -1,4 +1,4 @@
-# PartyDAO Audit Details
+# Party Protocol Audit Details
 
 - Total Prize Pool: $60,500 USDC
   - HM awards: $41,250 USDC
