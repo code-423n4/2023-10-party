@@ -55,15 +55,6 @@ Before continuing, it is highly recommended that you read the following pages fr
 
 ## Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
-
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each _For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc)._
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-
-_List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus._
-
 | Contract                                                                                                | SLOC | Purpose                | Libraries used                                           |
 | ------------------------------------------------------------------------------------------------------- | ---- | ---------------------- | -------------------------------------------------------- |
 | [contracts/crowdfund/InitialETHCrowdfund.sol](contracts/crowdfund/InitialETHCrowdfund.sol) | 300  | This contract is a crowdfund for creating a new ETH party | |
