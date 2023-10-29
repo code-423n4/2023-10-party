@@ -47,13 +47,6 @@ Before continuing, it is highly recommended that you read the following pages fr
 | Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started | To expand the variety of modules and extensions that could be built upon the Party Protocol leveraging the capabilities of the authority. |
 | Update to inline modifiers to reduce contract size for `Party` | Necessary to meet the contract size limit. |
 
-## Quickstart Command
-
-Here's a one-liner to immediately get started with the codebase. It will clone the project, build it, run every test, and display gas reports:
-
-```jsx
-export ETH_RPC_URL='<your_alchemy_mainnet_url_here>' && rm -Rf 2023-10-party || true && git clone https://github.com/code-423n4/2023-10-party -j8 --recurse-submodules && cd 2023-10-party && foundryup && forge install && yarn install && forge test -f $ETH_RPC_URL --gas-report
-```
 
 ## Links
 
@@ -146,6 +139,14 @@ In addition, it may we worthwhile to check all voting power accounting is correc
 - Is this either a fork of or an alternate implementation of another project?:   False
 - Does it use a side-chain?:
 - Describe any specific areas you would like addressed:
+```
+
+## Quickstart Command
+
+Here's a one-liner to immediately get started with the codebase. It will clone the project, build it, run every test, and display gas reports:
+
+```jsx
+export ETH_RPC_URL='<your_alchemy_mainnet_url_here>' && rm -Rf 2023-10-party || true && git clone https://github.com/code-423n4/2023-10-party -j8 --recurse-submodules && cd 2023-10-party && foundryup && forge install && yarn install && forge test -f $ETH_RPC_URL --gas-report
 ```
 
 ## Testing
