@@ -86,6 +86,10 @@ _Note for C4 wardens: Anything included in the 4naly3er **or** the automated fin
 
 All the following are known issues or risks deemed acceptable that shouldn't lead to a valid finding:
 
+- In some cases members of a Party may not be able to claim from the `TokenDistributor` although they should be eligible. In all known cases, it will have been triggered by the addition of new members and a change in the total voting power of the Party. We understand the unexpected results and are willing to accept the risk, given their low likelihood and the constraints for this release. Some known situations with unexpected outcomes:
+  - Party cards are burned and then added resulting in totalVotingPower <= totalVotingPower when the distribution was created.
+  - NFT parties have unclaimed Party cards from original crowdfund, a distribution is created, and then new party cards are added preventing the members with unclaimed cards from claiming from the distribution.
+  - Multiple Party cards (A,B,C) are added and a new distribution is made on the `safeTransfer` callback (or `safeMint` callback if these cards being minted) of the first new party card (A). Subsequently, more party cards are added (D,E). B and C are no longer able to claim the distribution
 - Authorities have “root user privileges” over a Party and is it well aware that they can exploit or break Parties in a wide variety of ways, especially if they are set to a malicious EOA or unsafe smart contract. This is why authorities are almost always smart contracts that are highly audited and trusted, and are NOT expected to be EOAs.
 - Hosts have unilateral veto power on any proposal. Hosts can block a governance party in this way.
 - It is possible that someone could manipulate parties by contributing ETH and then buying their NFT that they own. This is known and not considered a bug or a valid finding by the team.
@@ -105,7 +109,7 @@ A common theme we’ve noticed through our past C4 audits (we’ve had 4 now) is
 
 As the focus on this release was the `Party` contract, and all the contracts it inherits, we would _highly_ recommend you at least be aware of each of these related contracts:
 
-- `TokenDistributor`
+- `TokenDistributor` (see [here](#automated-findings--publicly-known-issues) for known issues)
 - `InitialETHCrowdfund`
 - All gatekeeper contracts
 - All operator contracts
@@ -114,6 +118,24 @@ As the focus on this release was the `Party` contract, and all the contracts it 
 If you want to take it a step further, you might ask yourself whether changes in one part of the codebase that effect another in turn introduce any unexpected interactions in yet another part of the codebase that interacts with the part before.
 
 In addition, it may we worthwhile to check all voting power accounting is correct and items owned by a Party (e.g. ERC721s, ERC20s) are not ruggable.
+
+## Additional Context
+
+-	Parties on our protocol may interact with any ERC20 tokens.
+-	In terms of ERC721, our protocol should be able to interact with any ERC721 that a group of individuals may find it reasonable and worthwhile to contribute ETH to acquire, like NFTs that have sufficient liquidity listed on platforms like OpenSea. This would not, for example, include unknown malicious ERC721 implementations with no market.
+-	The code deployment of the protocol is targeted for two blockchains: Ethereum Mainnet and Base Mainnet.
+- The protocol includes two primary trusted roles, each with unique capabilities and responsibilities:
+  -	**Hosts**: A role in the Party for trusted addresses that grants the ability to unilaterally veto proposals in the Party and configure Rage Quit. Each Host may or may not be a member (i.e. have non-zero voting power in the Party).
+  -	**Authorities**: A privileged role with root access to the Party. Can perform sensitive operations like minting and burning new memberships in a Party and updating the voting power of members. Authorities are expected to be trusted smart contracts, not EOAs.
+-	DOS attacks are not as relevant to our protocol. If there's a scenario where a DOS can occur, a minimum duration of 15 minutes should be demonstrated for a finding to be considered. However, this duration is somewhat arbitrary and findings may make arguments lesser durations if they can be justified.
+-	The protocol is designed to comply with several Ethereum Improvement Proposals (EIPs). Following contracts should be in compliance:
+  - `PartyGovernance`: Should comply with `ERC4906`
+  - `PartyGovernance`: Should comply with `ERC165`
+  - `PartyGovernanceNFT`: Should comply with `ERC2981`
+  - `PartyGovernanceNFT`: Should comply with `ERC721`
+  - `PartyGovernanceNFT`: Should comply with `ERC165`
+  - `ProposalExecutionEngine`: Should comply with `ERC1271`
+  - `OffChainSignatureValidator`: Should comply with `ERC1271`
 
 ## Scoping Details
 
