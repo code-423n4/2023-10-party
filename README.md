@@ -47,13 +47,6 @@ Before continuing, it is highly recommended that you read the following pages fr
 | Update `PartyGovernanceNFT.burn()` to allow authorities to burn any Party card even after governance has started | To expand the variety of modules and extensions that could be built upon the Party Protocol leveraging the capabilities of the authority. |
 | Update to inline modifiers to reduce contract size for `Party` | Necessary to meet the contract size limit. |
 
-## Quickstart Command
-
-Here's a one-liner to immediately get started with the codebase. It will clone the project, build it, run every test, and display gas reports:
-
-```jsx
-export ETH_RPC_URL='<your_alchemy_mainnet_url_here>' && rm -Rf 2023-10-party || true && git clone https://github.com/code-423n4/2023-10-party -j8 --recurse-submodules && cd 2023-10-party && foundryup && forge install && yarn install && forge test -f $ETH_RPC_URL --gas-report
-```
 
 ## Links
 
@@ -67,15 +60,15 @@ export ETH_RPC_URL='<your_alchemy_mainnet_url_here>' && rm -Rf 2023-10-party || 
 
 | Contract                                                                                                | SLOC | Purpose                | Libraries used                                           |
 | ------------------------------------------------------------------------------------------------------- | ---- | ---------------------- | -------------------------------------------------------- |
-| [contracts/crowdfund/InitialETHCrowdfund.sol](contracts/crowdfund/InitialETHCrowdfund.sol) | 300  | This contract is a crowdfund for creating a new ETH party | |
-| [contracts/party/PartyGovernance.sol](contracts/party/PartyGovernance.sol) | 778  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the governance logic for parties | |
-| [contracts/party/PartyGovernanceNFT.sol](contracts/party/PartyGovernanceNFT.sol) | 313  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the token logic for parties | [`solmate/ERC721`](https://github.com/PartyDAO/party-protocol/blob/main/contracts/vendor/solmate/ERC721.sol), [`openzeppelin/contracts/interfaces/IERC2981.sol`](https://openzeppelin.com/contracts/) |
-| [contracts/proposals/ProposalExecutionEngine.sol](contracts/proposals/ProposalExecutionEngine.sol) | 244  | This contract is delegate called from parties for execution logic involved with proposal. Parties also have a fallback that does a static delegate call to the `ProposalExecutionEngine` |  |
-| [contracts/proposals/ProposalStorage.sol](contracts/proposals/ProposalStorage.sol) | 47  | Shared storage storage bucket that is accessed in multiple contracts | |
-| [contracts/proposals/SetGovernanceParameterProposal.sol](contracts/proposals/SetGovernanceParameterProposal.sol) | 55  | A new proposal type that allows setting governance parameters for the party | |
-| [contracts/proposals/SetSignatureValidatorProposal.sol](hcontracts/proposals/SetSignatureValidatorProposal.sol) | 40  | A new proposal type that allows setting a signature validator for a given signature hash or simple validating the hash | |
-| [contracts/signature-validators/OffChainSignatureValidator.sol](contracts/signature-validators/OffChainSignatureValidator.sol) | 60  | Validator contract that reconstructs a message and ensures its a plaintext message. It then returns valid if the signer has sufficient voting power or membership in the party | |
-| [contracts/utils/Implementation.sol](contracts/utils/Implementation.sol) | 32  | A contract that provides helper function for implementation contracts used from a proxy | |
+| [contracts/crowdfund/InitialETHCrowdfund.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/crowdfund/InitialETHCrowdfund.sol) | 300  | This contract is a crowdfund for creating a new ETH party | |
+| [contracts/party/PartyGovernance.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/party/PartyGovernance.sol) | 778  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the governance logic for parties | |
+| [contracts/party/PartyGovernanceNFT.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/party/PartyGovernanceNFT.sol) | 313  | This contract is inherited by the `Party` contract--the core contract in the protocol. This contract has the token logic for parties | [`solmate/ERC721`](https://github.com/PartyDAO/party-protocol/blob/main/contracts/vendor/solmate/ERC721.sol), [`openzeppelin/contracts/interfaces/IERC2981.sol`](https://openzeppelin.com/contracts/) |
+| [contracts/proposals/ProposalExecutionEngine.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/proposals/ProposalExecutionEngine.sol) | 244  | This contract is delegate called from parties for execution logic involved with proposal. Parties also have a fallback that does a static delegate call to the `ProposalExecutionEngine` |  |
+| [contracts/proposals/ProposalStorage.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/proposals/ProposalStorage.sol) | 47  | Shared storage storage bucket that is accessed in multiple contracts | |
+| [contracts/proposals/SetGovernanceParameterProposal.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/proposals/SetGovernanceParameterProposal.sol) | 55  | A new proposal type that allows setting governance parameters for the party | |
+| [contracts/proposals/SetSignatureValidatorProposal.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/proposals/SetSignatureValidatorProposal.sol) | 40  | A new proposal type that allows setting a signature validator for a given signature hash or simple validating the hash | |
+| [contracts/signature-validators/OffChainSignatureValidator.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/signature-validators/OffChainSignatureValidator.sol) | 60  | Validator contract that reconstructs a message and ensures its a plaintext message. It then returns valid if the signer has sufficient voting power or membership in the party | |
+| [contracts/utils/Implementation.sol](https://github.com/code-423n4/2023-10-party/blob/main/contracts/utils/Implementation.sol) | 32  | A contract that provides helper function for implementation contracts used from a proxy | |
 
 
 ## Out of Scope
@@ -146,6 +139,14 @@ In addition, it may we worthwhile to check all voting power accounting is correc
 - Is this either a fork of or an alternate implementation of another project?:   False
 - Does it use a side-chain?:
 - Describe any specific areas you would like addressed:
+```
+
+## Quickstart Command
+
+Here's a one-liner to immediately get started with the codebase. It will clone the project, build it, run every test, and display gas reports:
+
+```jsx
+export ETH_RPC_URL='<your_alchemy_mainnet_url_here>' && rm -Rf 2023-10-party || true && git clone https://github.com/code-423n4/2023-10-party -j8 --recurse-submodules && cd 2023-10-party && foundryup && forge install && yarn install && forge test -f $ETH_RPC_URL --gas-report
 ```
 
 ## Testing
