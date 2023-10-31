@@ -121,7 +121,7 @@ In addition, it may we worthwhile to check all voting power accounting is correc
 
 ## Additional Context
 
--	Parties on our protocol may interact with any ERC20 tokens.
+-	Parties on our protocol are not expected to interact with rebasing or fee-on-transfer ERC20s.
 -	In terms of ERC721, our protocol should be able to interact with any ERC721 that a group of individuals may find it reasonable and worthwhile to contribute ETH to acquire, like NFTs that have sufficient liquidity listed on platforms like OpenSea. This would not, for example, include unknown malicious ERC721 implementations with no market.
 -	The code deployment of the protocol is targeted for two blockchains: Ethereum Mainnet and Base Mainnet.
 - The protocol includes two primary trusted roles, each with unique capabilities and responsibilities:
