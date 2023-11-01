@@ -105,19 +105,7 @@ In addition, any of the “Sponsor Acknowledged” issues from past audits:
 
 ## Areas of Interest
 
-A common theme we’ve noticed through our past C4 audits (we’ve had 4 now) is that the top findings were exploits introduced in one part of the protocol caused by a code change made in another related but often unsuspecting part of the protocol.
-
-As the focus on this release was the `Party` contract, and all the contracts it inherits, we would _highly_ recommend you at least be aware of each of these related contracts:
-
-- `TokenDistributor` (see [here](#automated-findings--publicly-known-issues) for known issues)
-- `InitialETHCrowdfund`
-- All gatekeeper contracts
-- All operator contracts
-- All proposal contracts
-
-If you want to take it a step further, you might ask yourself whether changes in one part of the codebase that effect another in turn introduce any unexpected interactions in yet another part of the codebase that interacts with the part before.
-
-In addition, it may we worthwhile to check all voting power accounting is correct and items owned by a Party (e.g. ERC721s, ERC20s) are not ruggable.
+We recommend checking that all voting power accounting is correct and items owned by a Party (e.g. ERC721s, ERC20s) are not ruggable.
 
 ## Additional Context
 
