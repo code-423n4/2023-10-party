@@ -1,0 +1,1518 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2023 / party-oct31
+==============================================================
+
+[10/26/2023 15:11] knownfactc4_29311
+👋 Hello and welcome to the audit channel for the $60,500 USDC **Party DAO** audit!
+
+📆 Audit opens 10/31/2023 20:00 (20:00 UTC) and runs through 11/10/2023 20:00 (20:00 UTC) (11 days).
+
+Please give a warm welcome to the Party DAO team, particularly @arr00 and @0xble, who will be available for questions either here in the channel or via DM in the ET timezone.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/contests/2023-10-party-protocol
+
+
+[10/27/2023 10:48] debofx
+Welcome!
+
+
+[10/27/2023 14:55] 0xsimeon
+Welcome!
+
+
+[10/27/2023 15:55] jpalmz
+Welcome everyone! This should be an exciting contest. We'll be posting more information here soon.
+
+{Reactions}
+🫡 (10) 
+
+[10/28/2023 13:06] xariextz
+Hey! Any previous audits?
+
+
+[10/28/2023 13:47] 0k_sec
+They’ve 3 previous audits on c4
+
+
+[10/28/2023 14:03] xariextz
+Of the same scope I mean
+
+
+[10/28/2023 17:05] 0k_sec
+I think they share these info when the contest starts
+
+
+[10/31/2023 15:45] arr00
+No previous audits on this new code.
+
+{Reactions}
+👍 (7) 🫡 
+
+[10/31/2023 20:04] brianle
+Here to answer any questions!
+
+
+[10/31/2023 20:04] thebrittfactor (pinned)
+**4naly3er Report**
+
+The 4naly3er report can be found [here](https://github.com/code-423n4/2023-10-party/blob/main/4naly3er-report.md).
+
+*Note for C4 wardens: The 4naly3er report is ran by our pre-audit Scouts and will be posted at audit launch. This will be in addition to the automated findings (bot report) or publicly known issues, so anything included in the 4naly3er or the automated findings output (once shared) is considered a publicly known issue and is ineligible for awards.*
+
+
+[10/31/2023 20:04] thebrittfactor
+Pinned a message.
+
+
+[10/31/2023 20:22] radev_sw
+@arr00 @0xble create private thread 🫡
+
+
+[10/31/2023 20:51] arr00
+Happy to have you all here! Feel free to ask questions here or in the dms.
+
+{Reactions}
+👍 (4) 
+
+[11/01/2023 02:14] tamayonft
+is this an upgrade rigth?
+
+
+[11/01/2023 06:21] marchev
+There are 19 failing tests with the following error:
+```
+[FAIL. Reason: JSON lint failed]
+```
+Anyone else hitting that?
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-DB753.png
+
+
+[11/01/2023 06:21] deth2814
+Same
+
+{Reactions}
+💀 
+
+[11/01/2023 06:23] aslanbekaibimov
+this works xD
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-B6A01.png
+
+{Reactions}
+🫡 (2) 
+
+[11/01/2023 06:27] marchev
+worked like a charm lol
+
+
+[11/01/2023 06:35] grandfather042
+14 for me 🙂
+
+
+[11/01/2023 06:38] marchev
+the force is stronger with you, mate 😄
+
+
+[11/01/2023 09:18] Message Wolf#0225 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Automated findings output for the audit can be found [here](https://gist.github.com/code423n4/1ee7d28f8ed9439658a524290a42ce72).
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
+
+[11/01/2023 11:05] thebrittfactor
+Pinned a message.
+
+
+[11/01/2023 13:42] 0k_sec
+this codebase have a previous audit right @arr00 ? but it have some new functionality
+
+{Reactions}
+👍 
+
+[11/01/2023 13:43] arr00
+It should work if you run yarn build:ts before running tests
+
+
+[11/01/2023 13:44] arr00
+@marchev @aslanbek @GF  ^
+
+
+[11/01/2023 13:49] Deleted User
+If we found a vulnerability in an out-of-scope smart contract which directly affects  an in-scope smart contract , is it an accepted issue ? i ask this because of  `` Areas of Interest
+`` section ???
+
+
+[11/01/2023 13:58] aslanbekaibimov
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-CBF00.png
+
+
+[11/01/2023 14:05] arr00
+did you run `yarn install` first?
+
+
+[11/01/2023 14:06] aslanbekaibimov
+i did
+
+
+[11/01/2023 14:08] aslanbekaibimov
+I suppose it is irrelevant for the actual code in-scope and tests, isnt it?
+
+
+[11/01/2023 14:11] arr00
+yes it doesn't really matter. I can't reproduce locally so lets not waste time on it. Commenting out is fine.
+
+{Reactions}
+👍 
+
+[11/01/2023 14:13] _t1nt1n
+@arr00 mind checking threads when you get the chance?
+
+
+[11/01/2023 14:41] 0k_sec
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/Screenshot_2023-11-01_173917-2A653.png
+
+
+[11/01/2023 14:41] 0k_sec
+only the contracts in this list are in scope ?
+
+
+it mentioned in below of the list to be aware of issue in operator and gatekeeper and other contracts which is not in the scope:
+
+```
+As the focus on this release was the Party contract, and all the contracts it inherits, we would highly recommend you at least be aware of each of these related contracts:
+
+TokenDistributor (see here for known issues)
+InitialETHCrowdfund
+All gatekeeper contracts
+All operator contracts
+All proposal contracts
+
+```
+
+
+[11/01/2023 15:38] 0xtendency
+What's the best way to reach you guys? 
+None of my queries have been responded to.
+@arr00 @0xble
+
+
+[11/01/2023 15:39] arr00
+Here works. Sorry you sent the questions overnight. Will reply now
+
+{Reactions}
+🙏 
+
+[11/01/2023 16:41] web3skid#0348
+what are precious tokens and what are their use?
+
+
+[11/01/2023 16:47] arr00
+Precious tokens are only used in NFTParties. Those are tokens that can't be transferred from the party except under special circumstances
+
+{Reactions}
+👍 
+
+[11/01/2023 17:37] brianle (pinned)
+FYI me and @arr00 are on EDT time, we will respond to any questions asked outside of reasonable hours as soon as we're online!
+
+
+[11/01/2023 17:39] kartoonjoy
+Pinned a message.
+
+
+[11/01/2023 17:41] brianle
+Also best way to get a hold of us is through private threads created under this channel (#party-oct31) with both of us (@0xble and @arr00)  mentioned for visibility
+
+
+[11/01/2023 17:43] 0xsimeon
+Please does anyone know where I can see the past audit reports for PartyDAO?
+
+
+[11/01/2023 17:45] brianle
+It is mentioned in the README under "Links"
+
+
+[11/01/2023 18:16] tamayonft
+the decrease price model that is used for saleOption 2 is created by the team or is taked from some models
+
+
+[11/01/2023 18:38] viraz4331
+Hi @arr00 @0xble 
+probably should be fixed in readme
+`The file contracts/crowdfund/ReraiseETHCrowdfund.sol is out of scope. All files located in contracts/renderers are out of scope. All files not located within the contracts folder are also out of scope.` 
+it should also mention all other contracts besides the 8 in scope contracts
+
+
+[11/01/2023 19:02] 0k_sec
+agreed, i mention it too
+
+
+[11/01/2023 19:22] 0xsimeon
+How can I see the findings/report from the repo? eg: https://github.com/code-423n4/2023-04-party checked issues/PRs, sorry if this is noob question
+
+{Embed}
+https://github.com/code-423n4/2023-04-party
+GitHub - code-423n4/2023-04-party
+Contribute to code-423n4/2023-04-party development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/c91304b1-c689-4f0a-96dd-29fd63b08413-16678
+
+
+[11/01/2023 19:25] arr00
+We are discussing this internal and will get back to you
+
+
+[11/01/2023 21:07] brianle
+You can ignore all files not defined in scope. The README will be updated soon to fix confusing descriptions in the "Areas of Interest" section
+
+
+[11/01/2023 22:32] web3skid#0348
+https://github.com/code-423n4/2023-04-party-findings
+
+{Embed}
+https://github.com/code-423n4/2023-04-party-findings
+GitHub - code-423n4/2023-04-party-findings
+Contribute to code-423n4/2023-04-party-findings development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/a254806f-33d4-4fca-86f3-777bad226e5c-4BF22
+
+
+[11/01/2023 23:22] debofx
+Hi @arr00  @0xble  I am getting the following error in foundry, how do I sort it out? ```Warning (3860): Contract initcode size is 93701 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.```
+
+
+[11/02/2023 02:16] arr00
+This is just a warning so shouldn’t be an issue for the sake of auditing. It is likely a test contract that is over the size limit.
+
+
+[11/02/2023 07:34] debofx
+Thanks I sorted it.
+
+
+[11/02/2023 12:09] viraz4331
+please notify once it is
+
+
+[11/02/2023 12:09] 0xarno
+check dm
+
+
+[11/02/2023 15:19] arr00
+Hello all wardens, please ask any general questions you have here in the public chat. General questions do not give away alpha and should be public info for everyone to learn.
+
+
+[11/02/2023 15:21] arr00
+Parties and crowdfunds are minimal proxies. They are created by the crowdfund factory and party factory.
+
+
+[11/02/2023 16:05] brianle
+Update merged 2 hours ago
+
+
+[11/02/2023 16:38] viraz4331
+@0xble @arr00 created a pvt thread
+
+{Reactions}
+👍 
+
+[11/02/2023 18:36] 0k_sec
+hey @arr00 , i think there is a mistake in this comment as it mentioned that both contributor function is used to contribute on behalf of the contributor and that's not true for the first contribute function, correct me if undersand this in a wrong way please
+
+https://github.com/code-423n4/2023-10-party/blob/b23c65d62a20921c709582b0b76b387f2bb9ebb5/contracts/crowdfund/InitialETHCrowdfund.sol#L158
+
+{Embed}
+https://github.com/code-423n4/2023-10-party/blob/b23c65d62a20921c709582b0b76b387f2bb9ebb5/contracts/crowdfund/InitialETHCrowdfund.sol
+2023-10-party/contracts/crowdfund/InitialETHCrowdfund.sol at b23c65...
+Contribute to code-423n4/2023-10-party development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/7b4f199e-90a6-41f6-95bd-f15b6e2119d1-F99F3
+
+
+[11/02/2023 19:23] 0k_sec
+and did the `batchContribute` function worked to update the owned tokenIDs that one address have ?
+for example address A have 3 tokenIDs and want to update all of them in one call to the `batchContribute` function ?!
+
+
+[11/02/2023 20:02] arr00
+Yes good callout. The comment should be changed
+
+{Reactions}
+🫡 
+
+[11/02/2023 20:02] arr00
+I believe that it would work to do that
+
+{Reactions}
+👍🏻 
+
+[11/03/2023 03:12] debofx
+Hi @arr00 i am run forge test and it is taking so long to run, even with the optimize hint. Any tips on how to run forge test quicker. I am using a fork to alchemy.
+
+
+[11/03/2023 12:46] brianle
+Do you have --via-ir enabled by chance
+
+
+[11/03/2023 15:15] debofx
+I forget where this is. IS it in an .env file?
+
+
+[11/03/2023 15:30] debofx
+What do I change the following to?  viaIR: withOptimizations && argv.ir,
+
+
+[11/03/2023 15:37] arr00
+You want to have viaIR and optimizer off to speed up compilation. For testing they are off by default in the repo
+
+
+[11/03/2023 15:56] debofx
+I have added the via ir = false to foundry.  And I have left the above as is.  It was not in the foundry toml file.
+
+
+[11/03/2023 15:56] debofx
+Thanks.
+
+
+[11/03/2023 15:56] debofx
+Still running slowly but maybe it will run in 1 hour instead 5.
+
+
+[11/03/2023 15:56] debofx
+Never experience this so bad before.
+
+
+[11/03/2023 16:06] j4x_98
+If you don't need all the tests to run but just your own POC use the `--match-test` flag, this will only run your test
+
+
+[11/03/2023 16:06] debofx
+Yes, I have run match-path with match-test and it took hours and at the end I got a "Error solc error"
+
+
+[11/03/2023 16:07] j4x_98
+Thats weird, if i use the flag my POCs for this codebase run instantly like maybe 1-2 seconds
+
+
+[11/03/2023 16:08] debofx
+Then I will try just  `--match-test`.  Does this need to run in the subfolder for the test contract?
+
+
+[11/03/2023 16:09] j4x_98
+I just run with `forge test -vvvv --match-test "testcaseName"`
+
+{Reactions}
+👍 
+
+[11/03/2023 16:09] j4x_98
+in the repo
+
+
+[11/03/2023 16:09] debofx
+Thanks
+
+
+[11/03/2023 16:09] j4x_98
+Sure no problem, hope it helps 🙂
+
+
+[11/04/2023 17:18] debofx
+I reinstalled and it works.
+
+{Reactions}
+🎉 
+
+[11/04/2023 17:46] cu5t0mpeo
+@arr00 check dm
+
+
+[11/04/2023 19:24] 0k_sec
+is `ProposalStateValues.passedTime` refers to the time where the vote stage/period ended?!
+
+
+[11/04/2023 20:52] eme0242
+Timestamp that proposal win threshold was reached
+
+{Reactions}
+❤️ 
+
+[11/05/2023 10:26] kingnft8007
+What is the scenario  of tx.origin == address(0), https://github.com/code-423n4/2023-10-party/blob/b23c65d62a20921c709582b0b76b387f2bb9ebb5/contracts/proposals/ProposalExecutionEngine.sol#L234
+
+{Embed}
+https://github.com/code-423n4/2023-10-party/blob/b23c65d62a20921c709582b0b76b387f2bb9ebb5/contracts/proposals/ProposalExecutionEngine.sol
+2023-10-party/contracts/proposals/ProposalExecutionEngine.sol at b2...
+Contribute to code-423n4/2023-10-party development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/7b4f199e-90a6-41f6-95bd-f15b6e2119d1-F99F3
+
+{Reactions}
+☝️ (3) 
+
+[11/05/2023 15:22] adeolu
+what's  `rageQuit()` in PartyGovernanceNFT for?
+
+
+[11/05/2023 15:25] arr00
+Please refer here https://docs.partydao.org/docs/partys/proposals/SetSignatureValidatorProposal
+
+
+[11/05/2023 16:03] j4x_98
+Are there any restrictions on the govOpts for creating a party besides the [ones](https://github.com/code-423n4/2023-10-party/blob/main/contracts/party/PartyGovernance.sol#L276-L282) in PartyGovernance._initialize()? If yes can we find the in the documentation or somewhere else in code?
+
+{Embed}
+https://github.com/code-423n4/2023-10-party/blob/main/contracts/party/PartyGovernance.sol
+2023-10-party/contracts/party/PartyGovernance.sol at main · code-42...
+Contribute to code-423n4/2023-10-party development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/7b4f199e-90a6-41f6-95bd-f15b6e2119d1-F99F3
+
+
+[11/05/2023 18:30] 0k_sec
+what are the cases/scenarios which lead to call the emergency functions ?
+
+
+[11/05/2023 18:34] debofx
+Hi @arr00 Can anyone burn in PartyGovernanceNFT?
+
+
+[11/05/2023 18:39] arr00
+No. Only authorities can burn
+
+{Reactions}
+👍 
+
+[11/05/2023 19:24] 0k_sec
+Are authorities some contracts deployed by the party team ? @arr00
+
+
+[11/05/2023 19:24] arr00
+Yes. Crowdfunds are authorities
+
+{Reactions}
+👍🏻 (3) 
+
+[11/05/2023 20:08] j4x_98
+@arr00
+
+
+[11/06/2023 06:38] chainsnake
+can anyone explain me what this code segment means?
+```
+        bytes4 functionSelector = bytes4(msg.data[0:4]);
+        if (
+            functionSelector == ERC1155TokenReceiverBase.onERC1155BatchReceived.selector ||
+            functionSelector == ERC1155TokenReceiverBase.onERC1155Received.selector ||
+            functionSelector == IERC721Receiver.onERC721Received.selector
+        ) {
+            assembly {
+                let freeMem := mload(0x40)
+                mstore(freeMem, functionSelector)
+                mstore(0x40, add(freeMem, 0x20))
+                return(freeMem, 0x20)
+            }
+        }
+```
+
+
+[11/06/2023 06:53] _3agle
+```js
+let freeMem := mload(0x40) //Get the location where the memory is free
+mstore(freeMem, functionSelector) //Store the functionSelector at free memory
+mstore(0x40, add(freeMem, 0x20)) //Update the free memory pointer
+return(freeMem, 0x20) //Return the stored function selector
+```
+
+{Reactions}
+🤩 (2) 
+
+[11/06/2023 06:54] _3agle
+In short, if the condition is true, return the `functionSelector`
+
+
+[11/06/2023 09:08] _3doc_
+Hi @arr00 and @0xble could you kindly double-check whether the "Party.sol" should really be out of scope? It's not in scope.txt but Its parents are in scope, despite it looks like they have no other use than with Party. Thanks
+
+
+[11/06/2023 12:18] 0k_sec
+did each party/crowdfund have their own DAO or there is one DAO for all the protocol ? and what is the address of the DAO ? @arr00
+
+
+[11/06/2023 13:07] 0xsimeon
+@arr00 Are authorities the only actors that can mint/burn party nfts?
+
+
+[11/06/2023 13:25] debofx
+@arr00 https://discord.com/channels/810916927919620096/1166790187360194580/1170794444660936835
+
+{Reactions}
+❤️ 
+
+[11/06/2023 13:58] arr00
+There is one partydao. On mainnet it is partydao.eth
+
+{Reactions}
+👍🏻 
+
+[11/06/2023 13:58] arr00
+If ragequit is on, any party member can burn their nft via ragequit.
+
+
+[11/06/2023 14:00] 0xsimeon
+In `PartyGovernanceNFT::mint`,  we call  `_adjustVotingPower`, I am trying to understand the logic for the voting power being adjusted in PartyGovernance.
+
+Why is this done?
+
+
+[11/06/2023 14:01] 0xsimeon
+Thank you. @arr00  and @debo
+
+{Reactions}
+👍 
+
+[11/06/2023 14:01] arr00
+There were no changes to that file for this release so it wasn’t in scope. That said, if you do find a bug in it, im sure it interacts with in scope code in some way and we will be able to honor it.
+
+{Reactions}
+👍 
+
+[11/06/2023 14:02] arr00
+We checkpoint voting power. When a new nft is minted that results in the voting power for the receiver changing so we need a new checkpoint
+
+{Reactions}
+10_10 
+
+[11/06/2023 15:39] chainsnake
+hi, @arr00 , just dmed you.
+
+
+[11/06/2023 15:48] 0xsimeon
+sent fr, @arr00
+
+
+[11/06/2023 16:45] dimulski
+Is the globals contract a singleton contract per chain
+
+
+[11/06/2023 17:04] 0xarav
+PartyDao was already on C4 previously right ?
+
+{Reactions}
+👍 
+
+[11/06/2023 17:05] j4x_98
+Yes there were 3 contests.
+
+
+[11/06/2023 17:05] 0xarav
+Right!
+
+
+[11/06/2023 17:17] arr00
+It says that it may not. This comment should be updated to say that it will revert. Previous versions delt with this differently
+
+
+[11/06/2023 17:17] brianle
+This is because there use to be a `bool revertIfTrue` param that was removed and the natspec is out of date
+
+
+[11/06/2023 17:18] arr00
+Yes
+
+{Reactions}
+👍 
+
+[11/06/2023 17:53] brianle
+For any private questions/comments, you'll have better luck with private threads or posting here rather than DM's to me or arr00!
+
+
+[11/06/2023 18:15] .akira0327
+Is there any diagram for actor - action - protocol?
+
+
+[11/06/2023 18:17] brianle
+If it helps, you can referrance these diagrams from our first contest. A few contracts are missing since it has not been updated, but the general flow still remains: https://github.com/code-423n4/2022-09-party#lifecycle-and-diagrams
+
+{Reactions}
+👍 (2) 
+
+[11/06/2023 18:17] brianle
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/contract-lifecycle-E8E4B.png
+
+
+[11/06/2023 18:21] .akira0327
+I'm seeing prev audit, so I'm able to believe all issues are fixed in prior audits?
+
+
+[11/06/2023 19:13] sweetcat0118
+Can anyone explain how to test the contract becuase I didnt use forge test before?
+
+
+[11/06/2023 19:16] sweetcat0118
+@arr00 Could you explain how to test the contract using forge from installing package to test?
+
+
+[11/06/2023 19:17] arr00
+yeah sure. Do you have forge installed?
+
+
+[11/06/2023 19:17] sweetcat0118
+yeah
+
+
+[11/06/2023 19:18] arr00
+Ok so after cloning make sure to run npm/yarn install and then `forge install`. Then everything should work
+
+
+[11/06/2023 19:18] arr00
+lmk if not
+
+
+[11/06/2023 19:18] sweetcat0118
+Okay, thx
+
+
+[11/06/2023 19:20] sweetcat0118
+@arr00 I got this error after typed forge install
+
+
+[11/06/2023 19:20] sweetcat0118
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-15BF3.png
+
+
+[11/06/2023 19:21] arr00
+How did you install forge?
+
+
+[11/06/2023 19:21] sweetcat0118
+npm install --global forge
+
+
+[11/06/2023 19:22] arr00
+Don't believe that works. Check this out https://book.getfoundry.sh/getting-started/installation
+
+
+[11/06/2023 19:25] sweetcat0118
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-97C8B.png
+
+
+[11/06/2023 19:26] sweetcat0118
+It cannot be used on windows?
+
+
+[11/06/2023 19:28] chainsnake
+@arr00 , just dmed you
+
+
+[11/06/2023 19:29] sweetcat0118
+@arr00 PartyDao project should be tested on linux system?
+
+
+[11/06/2023 19:35] brianle
+I'd create a private thread and mention both me and arr00 there for increased visibility and quicker responses
+
+{Reactions}
+🙌 
+
+[11/06/2023 19:35] brianle
+This was the error you got installing forge?
+
+
+[11/06/2023 19:36] chainsnake
+that works on git bash
+
+
+[11/06/2023 19:39] arr00
+There is a note in the installation guide: 
+```"If you're on Windows, you will need to install and use Git BASH or WSL, as your terminal, since Foundryup currently does not support Powershell or Cmd."```
+
+
+[11/06/2023 19:40] sweetcat0118
+I used git bash and installed foundryup but still error in forge
+
+
+[11/06/2023 19:41] sweetcat0118
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-F0623.png
+
+
+[11/06/2023 19:42] brianle
+Can you run `forge -V` to see if you have Foundry installed correctly
+
+
+[11/06/2023 19:43] sweetcat0118
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-CD2A1.png
+
+
+[11/06/2023 19:43] arr00
+make sure to remove the npm module forge
+
+
+[11/06/2023 19:43] sweetcat0118
+Is it correct?
+
+
+[11/06/2023 19:43] arr00
+You still have the npm module
+
+
+[11/06/2023 19:44] arr00
+linux/macos is easier to run on but i believe it should be possible on windows
+
+
+[11/07/2023 00:42] 0xlgtm
+https://book.getfoundry.sh/getting-started/installation\
+
+{Embed}
+https://book.getfoundry.sh/getting-started/installation/
+Foundry Book
+A book on all things Foundry
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/card-E9D38.png
+
+
+[11/07/2023 00:42] 0xlgtm
+If you need more help re. installation, you can ask in the foundry support chat on telegram. https://t.me/foundry_support
+
+{Embed}
+https://t.me/foundry_support
+Foundry Support
+You can view and join @foundry_support right away.
+
+
+[11/07/2023 05:16] danhapo
+@arr00 Anyone can create CrowdfundImplementation in factory?
+
+
+[11/07/2023 07:10] 0xsimeon
+QQ: Does anyone know the entry points for users (aka members)? of a party/crowdfund
+
+
+[11/07/2023 09:56] jacobmartin0406
+@arr00 sent Fr, plz check
+
+
+[11/07/2023 10:21] 0xfave
+Does anyone know this?
+
+
+[11/07/2023 10:28] stormreckson
+InitialETHCrowdFund.sol  `contribute` or `batchContribute` functions
+
+{Reactions}
+👍 
+
+[11/07/2023 10:33] jacobmartin0406
+Do I need RPC or alchemy url to run tests?
+
+
+[11/07/2023 10:37] pavankv
+@arr00 and @0xble created private thread . Please check
+
+
+[11/07/2023 11:18] anjali_t
+u can run test locally as well
+
+{Reactions}
+thankyou 
+
+[11/07/2023 12:25] jacobmartin0406
+what is the difference between the maxContribution and maxTotalContribution?
+
+
+[11/07/2023 12:31] danhapo
+maxContribution is the maximum value which you can contribute at once, and maxTotalContribution is the crowdfund maximum contribution total which need to finalize crowdfund.
+
+{Reactions}
+👍 
+
+[11/07/2023 13:02] 0xsimeon
+A contributor must provide a delegate at the time of contribution?
+
+
+[11/07/2023 13:12] 0k_sec
+hey when i run the intial crowdfund test file it show me this
+
+
+[11/07/2023 13:12] 0k_sec
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/Screenshot_2023-11-07_160821-56D7F.png
+
+
+[11/07/2023 13:12] 0k_sec
+how can i fix it please ?
+
+
+[11/07/2023 13:13] 0k_sec
+this is the line that it mentioned in the pic above :
+
+```
+ function refund(uint256 tokenId) external returns (uint96 amount) {
+        // Check crowdfund lifecycle.        {
+            CrowdfundLifecycle lc = getCrowdfundLifecycle();
+            if (lc != CrowdfundLifecycle.Lost) {
+                revert WrongLifecycleError(lc);
+            }
+        }
+
+        // Get amount to refund.
+        uint96 votingPower = party
+            .votingPowerByTokenId(tokenId)
+            .safeCastUint256ToUint96();
+        amount = convertVotingPowerToContribution(votingPower);
+
+        if (amount > 0) {
+            // Get contributor to refund.
+            address payable contributor = payable(party.ownerOf(tokenId));
+
+            // Burn contributor's party card.
+            party.burn(tokenId);
+
+```
+
+
+[11/07/2023 13:29] debofx
+Declare amount maybe uint256 amount = ...
+
+
+[11/07/2023 13:32] 0k_sec
+the amount declared already in the returns variable, do you mean to declare it in the function body ?
+
+{Reactions}
+👍 
+
+[11/07/2023 13:53] debofx
+Yes, like voting power above it in the function body.
+
+{Reactions}
+10_10 
+
+[11/07/2023 13:54] 0k_sec
+ok i do it now, thanks 🫡
+
+{Reactions}
+👍 
+
+[11/07/2023 15:03] brianle
+What contract are you referring to by CrowdfundImplementation? That's not a contract that exist
+
+
+[11/07/2023 15:04] brianle
+For forked test, yes
+
+
+[11/07/2023 15:06] jacobmartin0406
+@arr00 @0xble created private thread
+
+
+[11/07/2023 15:07] anjali_t
+in this function where're we actually assigning new value to rageQuitTimestamp
+```
+/// @notice Set the timestamp until which ragequit is enabled.
+    /// @param newRageQuitTimestamp The new ragequit timestamp.
+    function setRageQuit(uint40 newRageQuitTimestamp) external {
+        _assertHost();
+        // Prevent disabling ragequit after initialization.
+        if (newRageQuitTimestamp == DISABLE_RAGEQUIT_PERMANENTLY) {
+            revert CannotDisableRageQuitAfterInitializationError();
+        }
+
+        uint40 oldRageQuitTimestamp = rageQuitTimestamp;
+
+        // Prevent setting timestamp if it is permanently enabled/disabled.
+        if (
+            oldRageQuitTimestamp == ENABLE_RAGEQUIT_PERMANENTLY ||
+            oldRageQuitTimestamp == DISABLE_RAGEQUIT_PERMANENTLY
+        ) {
+            revert FixedRageQuitTimestampError(oldRageQuitTimestamp);
+        }
+
+        emit RageQuitSet(oldRageQuitTimestamp, rageQuitTimestamp = newRageQuitTimestamp);
+    }
+```
+
+
+[11/07/2023 15:08] anjali_t
+can we assign values while emiting event??
+
+
+[11/07/2023 15:08] brianle
+maxContribution limits how much can be contributed at a time, motivated by limiting how much voting power each card can have. maxTotalContribution is basically the max amount the crowdfund wants to raise, at which point it will be finalized and no one else can contribute
+
+
+[11/07/2023 15:09] brianle
+Yes
+
+{Reactions}
+👍 
+
+[11/07/2023 15:10] arr00
+Yes anyone can deploy a crowdfund impl but from our frontend, we use the deployed contracts as listed in the README
+
+{Reactions}
+👍 
+
+[11/07/2023 15:17] jacobmartin0406
+Is there a mechanism for limiting user's voting power?
+
+
+[11/07/2023 15:38] brianle
+No, the closest thing is min/max contribution in InitialETHCrowdfund but thats only during the crowdfund stage
+
+
+[11/07/2023 17:50] jacobmartin0406
+Can users transfer voting power directly?
+
+
+[11/07/2023 17:55] danhapo
+I think it's possible in way of transfer tokens with votingPower to the others.
+
+
+[11/07/2023 18:15] brianle
+Like without transfering a Party card? No, unless you mean delegating
+
+{Reactions}
+thankyou 
+
+[11/07/2023 19:58] .akira0327
+Let me know if you have whitepaper for this protocol rather than docs link.
+
+
+[11/07/2023 20:59] adeolu
+hi @0xble , who deploys the crowdfund contracts? party hosts?
+
+
+[11/07/2023 21:12] .akira0327
+maybe walking or glassing. 🤣
+
+
+[11/07/2023 21:22] arr00
+There isn't a whitepaper but make sure to check out https://docs.partydao.org/
+
+
+[11/07/2023 21:23] arr00
+The implementation is deployed by the party team. The proxy is deployed when the creator of the party calls the crowdfundfactory
+
+
+[11/07/2023 21:24] adeolu
+ty
+
+
+[11/08/2023 00:30] lsaudit
+How delegation exactly works? Let's say, those are votes: `A(2)`, `B(20)`, `C(200)`. When A delegates to B and B delegates to C, how much B and C have?
+
+
+[11/08/2023 08:15] osmanozdemir1
+B will have 2 delegatedVotingPower, 20 intrinsicVotingPower and `isDelegated` will be true. -> he will only vote with 2
+
+C will have 20 delegatedVotingPower, 200 intrinsicVotingPower and isDelegetad will be false -> He will be able to vote with 220
+
+Only intrinsic powers are delegated
+
+{Reactions}
+🔥 (2) thankyou (2) 
+
+[11/08/2023 13:33] bauchibred
+Hi @arr00 @0xble  waiting for a response in the private thread.
+
+
+[11/08/2023 13:40] arr00
+A very common source of confusion in the DMs and private threads has been asking about the signature validator (`tx.origin == address(0)`). Please refer to these docs:
+
+https://docs.partydao.org/docs/partys/signature-validators/OffChainSignatureValidator
+https://docs.partydao.org/docs/partys/proposals/SetSignatureValidatorProposal
+
+
+[11/08/2023 14:29] .akira0327
+Anyone know why vscode navigation doesn't work in this repo?
+
+
+[11/08/2023 15:16] brianle
+vscode navigation?
+
+
+[11/08/2023 15:17] .akira0327
+Yes, when clicking the symbol, it shows symbol not defined.
+Really it's hard to inspect code on vscode.
+
+
+[11/08/2023 15:18] .akira0327
+it would be helpful if anyone know the solution
+
+
+[11/08/2023 16:06] pontifex73
+Hi @0xble @arr00 ! Sent you a question in a private thread
+
+
+[11/08/2023 16:23] brianle
+Received, thanks
+
+
+[11/08/2023 16:38] .akira0327
+Hi, @0xble precious tokens, tokenids are off-chain data, so once they are set on chain(party), they will be immutable?
+
+
+[11/08/2023 18:47] brianle
+Yes once precious tokens are set they are immutable
+
+
+[11/08/2023 18:52] maroutis
+Hello @0xble , I sent you a Dm
+
+{Reactions}
+👍 
+
+[11/08/2023 18:52] .akira0327
+Thanks
+
+
+[11/08/2023 20:19] klau5_
+Sent question in private thread! @0xble @arr00
+
+
+[11/08/2023 20:19] brianle
+Replied
+
+{Reactions}
+👍 
+
+[11/08/2023 21:36] evmboi32
+can party hosts be malicious? let's say there are 10 hosts for a party ... are all 10 trusted? or can we assume that at least one can be bad?
+
+
+[11/08/2023 21:39] evmboi32
+let's say he can do something he shouldn't have
+
+
+[11/08/2023 22:02] osmanozdemir1
+It is stated in the readme.
+
+Hosts and authorities are trusted. 
+
+These kind of issues are considered as centralization issues and should be submitted as a part of advanced analysis report according to C4 docs
+
+
+[11/08/2023 22:36] topmark1
+please how do I solve this
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image-B4D52.png
+
+
+[11/08/2023 23:38] brianle
+Can you run forge install to see if it fixes it
+
+
+[11/08/2023 23:52] topmark1
+worked thanks
+
+{Reactions}
+👍 
+
+[11/09/2023 11:37] 0k_sec
+only the `intialETHcrowdfund` contract is authorities for now right ? @0xble @arr00
+
+
+[11/09/2023 15:10] qwertypark
+hey guys @0xble @arr00 are you available today?
+
+{Reactions}
+👍 
+
+[11/09/2023 15:59] j4x_98
+@arr00 @0xble could you maybe explain what you mean by off-chain call? Like a view function being called via rpc?
+
+
+[11/09/2023 16:10] arr00
+Yes
+
+
+[11/09/2023 16:11] arr00
+Or any call that isn’t a real ethereum transaction
+
+
+[11/09/2023 16:11] arr00
+No
+
+
+[11/09/2023 16:18] 0k_sec
+Which contracts are auth for now please?
+
+
+[11/09/2023 16:19] arr00
+Any crowdfund or authority is built to be an authority of a party
+
+
+[11/09/2023 19:13] .akira0327
+Can you check the private thread for my question?
+
+{Reactions}
+👍 
+
+[11/09/2023 23:59] ladboy233
+@0xble @arr00 dmed
+
+
+[11/10/2023 00:42] taylorwebb
+why are the various contribute functions on `InitialETHCrowdfund.sol` marked as `onlyDelegateCall`? Where will these typically be called from?
+
+
+[11/10/2023 03:10] brianle
+Will be called from proxies. Prevents the logic contract itself from being used. In many if not all cases,`onlyDelegateCall` is added as precaution but is not actually necessary
+
+{Reactions}
+🙏 
+
+[11/10/2023 06:29] 0xsimeon
+An EOA can contribute but only via the proxy that does a delegatecall?
+
+
+[11/10/2023 08:51] brianle
+Yes
+
+
+[11/10/2023 09:35] _killua69_
+Can anyone please explain what precious tokens are and what they’re meant to be used for?
+
+
+[11/10/2023 11:45] 0xsimeon
+@0xble why should users care about precious tokens? It's use case for the protocol.
+
+
+[11/10/2023 14:21] 0k_sec
+why we give uint max to this function ?
+```
+function getVotingPowerAt(
+        address voter,
+        uint40 timestamp
+    ) external view returns (uint96 votingPower) {
+        //why max uint256 !
+        return getVotingPowerAt(voter, timestamp, type(uint256).max);
+    }
+
+```
+
+
+[11/10/2023 14:29] maroutis
+@0xble @arr00 sent a dm in private thread.
+
+
+[11/10/2023 14:48] .akira0327
+GLOBAL_PROPOSAL_ENGINE_IMPL is the instance of ProposalExecutionEngine.sol?
+
+{Reactions}
+👍 
+
+[11/10/2023 15:17] auditwolf
+@0xble sent dm ser
+
+
+[11/10/2023 19:41] 0k_sec
+am i the only one who write all reports at last one hour 🫠
+
+
+[11/10/2023 19:41] 0k_sec
+https://tenor.com/view/cat-crazy-cat-keyboard-cat-fast-gif-5753018
+
+{Embed}
+https://tenor.com/view/cat-crazy-cat-keyboard-cat-fast-gif-5753018
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/cat-crazy-cat-E4A73.png
+
+{Reactions}
+😂 (3) 
+
+[11/10/2023 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺wardens The Party Protocol audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+
+[11/10/2023 20:03] _3doc_
+I had one that didn't make it for like 20 seconds 🙈
+
+{Reactions}
+😅 
+
+[11/10/2023 20:18] adeolu
+Auditing is hard.
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/image0-9625B.gif
+
+{Reactions}
+💯 (5) 
+
+[11/10/2023 20:34] 0k_sec
+This codebase was really tough and hard to find any valid bugs  🫠
+
+{Reactions}
+👍 
+
+[11/10/2023 20:55] _killua69_
+No cap chief
+
+
+[11/10/2023 20:55] web3skid#0348
+this codebase has been audited numerous times
+
+
+[11/10/2023 20:56] web3skid#0348
+like only 3% or 4% of the code base was new code lol
+
+
+[11/10/2023 21:02] 0k_sec
+True
+
+
+[11/10/2023 21:02] 0k_sec
+Can someone tell us how many subs we have ?
+
+
+[11/10/2023 21:05] arr00
+The findings are being deduped and triaged. We are not able to see them until after
+
+{Reactions}
+👍🏻 
+
+[11/10/2023 21:28] mosharaf
+How many subs?
+
+
+[11/10/2023 21:32] t1moh
+555
+
+{Reactions}
+thankyou (4) 
+
+[11/11/2023 01:39] 0xsimeon
+Thanks to the partyDAO team. @arr00 and @0xble
+
+{Reactions}
+❤️ (7) 
+
+[11/28/2023 16:42] lsaudit
+any news when the results are coming? Today? ;>
+
+{Reactions}
+👀 (6) 
+
+[11/29/2023 13:50] unique0x0
+https://tenor.com/view/still-waiting-for-the-good-news-johnny-johnny-rose-eugene-levy-schitts-creek-gif-20774192
+
+{Embed}
+https://tenor.com/view/still-waiting-for-the-good-news-johnny-johnny-rose-eugene-levy-schitts-creek-gif-20774192
+Code4rena - ARCHIVE-Q4-2023 - party-oct31 [1166790187360194580].txt_Files/still-waiting-for-the-good-news-johnny-44879.png
+
+{Reactions}
+👀 👨‍💻 
+
+[11/29/2023 14:14] _paperparachute
+🤑 🎉  Awards for **Party Protocol**:
+
+$17,257.93 USDC » @sin1st3r__ 
+$7,665.21 USDC » TresDelinquentes (@deth, @marchev, and @Silvermist)
+$2,359.21 USDC » @3DOC 
+$1,532.79 USDC » @Arz 
+$1,261.80 USDC » @HChang26 
+$1,061.86 USDC » @Vagner 
+$944.91 USDC » @Bauchibred 
+$925.79 USDC » @lsaudit 
+$884.90 USDC » Pechenite (@bozho and @radev_sw) 
+$776.77 USDC » @0xbrett8571 
+$748.44 USDC » @catellatech 
+$716.76 USDC » @cccz 
+$716.76 USDC » pep7siup 
+$716.76 USDC » @KupiaSec 
+$716.76 USDC » @0xA5DF 
+$599.53 USDC » @ICP 
+$575.73 USDC » @0xSmartContract 
+$445.15 USDC » @Madalad 
+$435.07 USDC » @rvierdiiev 
+$435.07 USDC » @klau5 
+$385.17 USDC » Emmanuel 
+$361.13 USDC » @0xVolcano 
+$277.80 USDC » DavidGiladi 
+$277.80 USDC » @0xAnah 
+$250.91 USDC » @0xadrii 
+$235.13 USDC » @MinimalProxy 
+$235.13 USDC » @leegh 
+$215.71 USDC » @Shaheen 
+$215.71 USDC » @adriro 
+$199.93 USDC » P12473
+$199.93 USDC » @bart1e 
+$199.93 USDC » @pontifex 
+$199.93 USDC » @ast3ros 
+$199.93 USDC » @evmboi32 
+$199.93 USDC » @0xbepresent 
+$168.15 USDC » @adeolu 
+$168.15 USDC » @chainsnake 
+$168.15 USDC » @J4X 
+$152.37 USDC » @D1r3Wolf 
+$152.37 USDC » @Neon2835 
+$117.57 USDC » @mahdikarimi 
+$83.82 USDC » @K42 Ψ 
+$83.82 USDC » @hunter_w3b 
+$75.79 USDC » @ZanyBonzy 
+$60.01 USDC » @foxb868 
+$60.01 USDC » Myd 
+$60.01 USDC » @kaveyjoe 
+$60.01 USDC » clara 
+$60.01 USDC » @SAAJ 
+$39.59 USDC » Topmark 
+$23.81 USDC » ybansal2403 
+$23.81 USDC » @john80 
+$23.81 USDC » @0xhacksmithh 
+$23.81 USDC » @0x11singh99 
+$23.81 USDC » @arjun16 
+$23.81 USDC » @dharma09 
+$23.81 USDC » 0xhex 
+$23.81 USDC » 0xta 
+$23.81 USDC » tabriz
+$15.78 USDC » @0xmystery 
+$15.78 USDC » @Ch301 
+$15.78 USDC » @osmanozdemir1 
+$15.78 USDC » @Walter 
+$15.78 USDC » @joaovwfreire 
+$15.78 USDC » @0xMosh
+
+🏁 Findings summary
+--------------------------------------—
+High risk findings: 2 unique (16 total)
+Med risk findings: 7 unique (34 total)
+Gas reports: 17 (Best: 0xVolcano)
+QA reports: 22 (Best: 3docSec)
+Advanced analysis reports: 13 (Best: catellatech)
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (14) C4Keycap (4) 🐺 4739_Skeletor 10_10 (2) nice 🔥 PoolTogether 🅰️ 🇷 🇹 🇾 
+
+[11/29/2023 14:16] deth2814
+@sin1st3r__ grats, killed it
+
+{Reactions}
+🔥 (11) ❤️ 
+
+[11/29/2023 14:18] 0x11singh99
+Thanks for fast judging
+
+{Reactions}
+👌 (3) 
+
+[11/29/2023 16:50] 0xsimeon
+congratulations @deth
+
+
+[11/29/2023 17:03] lsaudit
+top10, yay!
+
+
+[11/29/2023 17:22] 0xstalin
+excellent work @sin1st3r__
+
+{Reactions}
+❤️ 
+
+[11/29/2023 17:27] sin1st3r__
+Big congrats to everyone, this was definitely a tough contest.
+
+I want to thank Allah first for his blessings on me and for letting me win this contest. Secondly, I want to thank the PartyDAO team (@arr00 @0xble) for the opportunity + helping answer all my questions during the contest, especially Brian. You guys rock
+
+I wish you all a prosperous auditing career.
+
+{Reactions}
+hi5 (17) ❤️ (10) 🎉 (8) 
+
+[11/29/2023 17:30] sin1st3r__
+Tbh the outcome was shocking for me as this is my 2nd audit ever. I barely knew what a DAO is going into this audit, but I've been hacking breaking software for years and I guess that's what helped me significantly. The mindset and the way you look at software as an attacker are the same regardless of what you're hacking, it's the technologies/stacks that can change.
+
+{Reactions}
+👏 (16) 🔥 (10) ❤️ (7) 
+
+[11/29/2023 17:43] superman_i4g
+MashaAllah 
+Congratulations
+
+{Reactions}
+❤️ (2) 
+
+[11/29/2023 17:43] superman_i4g
+Great mindset🚀
+Hope to see more from you
+
+{Reactions}
+❤️ 
+
+[11/29/2023 17:48] jpalmz
+Nice work @sin1st3r__ and to all the other winners! Thank you all for working with us. Let us know if you have any feedback!
+
+{Reactions}
+❤️ 
+
+[11/29/2023 17:49] stormreckson
+Congratulations all 🎉
+
+
+[11/29/2023 17:53] devabdee
+MaShaaAllah brother 🫡
+
+{Reactions}
+❤️ (2) 
+
+[11/30/2023 21:57] marchev
+Legend 🔥
+
+{Reactions}
+❤️ 
+
+[11/30/2023 22:29] whoismxuse
+hamdouillah brother
+
+{Reactions}
+❤️ (2) 
+
+[11/30/2023 22:34] arie71.
+Congrats
+
+{Reactions}
+❤️ 
+
+[02/24/2024 02:47] itsmetechjay
+ℹ️ This channel is pending archive.  As a result, any private threads will be permanently deleted on Saturday, 02 March 2024. Please make sure to grab anything you might need from those before then.
+
+
+[02/29/2024 22:34] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 267 message(s)
+==============================================================
